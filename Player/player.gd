@@ -90,7 +90,7 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, speed)
 			velocity.z = move_toward(velocity.z, 0, speed)
 				
-		#print(velocity)
+
 		if Input.is_key_pressed(KEY_ESCAPE):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
@@ -99,8 +99,7 @@ func _physics_process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			rotate_y(-input_mouse.x/10000)
 			animations.get_node("Skeleton3D/Camera3D").rotate_x(input_mouse.y/10000)
-			#print(animations.get_node("Skeleton3D/Camera3D").project_ray_origin(self))
-			#print(direction)	
+
 			move_and_slide()
 	
 func _add_character(source):
@@ -121,7 +120,7 @@ const RAY_LENGTH = 1000.0
 #			var camera3d = animations.get_node("Skeleton3D/Head/Camera3D")
 #			var from = camera3d.project_ray_origin(event.position)
 #			var to = from + camera3d.project_ray_normal(event.position) * RAY_LENGTH
-#			print(to)
+
 
 #func dash(animation_player):
 #	speed = BASESPEED*DASH

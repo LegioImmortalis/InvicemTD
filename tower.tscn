@@ -124,22 +124,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_is63k")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_nta01"]
-height = 4.0
-radius = 0.4
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sjhod"]
+margin = 0.004
+radius = 0.45
 
 [node name="Tower" type="AnimatableBody3D"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 42, 2, 10)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_7fnib")
 
-[node name="watchtower" type="Node3D" parent="."]
-
-[node name="watchtower" type="MeshInstance3D" parent="watchtower"]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_07yig")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="watchtower"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
-shape = SubResource("CylinderShape3D_nta01")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.4)
+shape = SubResource("CylinderShape3D_sjhod")

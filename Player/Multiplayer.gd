@@ -9,7 +9,6 @@ var shoot := false
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_motion = event.relative
-		#print("mouse_motion: " + str(mouse_motion))
 
 func update(player_id):
 	motion = Input.get_vector("move_forward", "move_backward", "move_left", "move_right")
@@ -20,4 +19,4 @@ func update(player_id):
 	mouse_motion = Vector2()
 
 #func _physics_process(_delta):
-#	print(input_state)
+
