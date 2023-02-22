@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5yg5i3r0nupb"]
+
+[ext_resource type="PackedScene" uid="uid://8fagu2p064so" path="res://castle.tscn" id="1_j06wx"]
+[ext_resource type="PackedScene" uid="uid://bxv0hgnmou5od" path="res://baracks.tscn" id="2_oltnf"]
+[ext_resource type="PackedScene" uid="uid://b2mnb0s83fq0o" path="res://tower.tscn" id="3_4t60c"]
+[ext_resource type="PackedScene" uid="uid://dqu5td0jkwfew" path="res://armory.tscn" id="4_g32ow"]
+[ext_resource type="PackedScene" uid="uid://dponawm027lf1" path="res://market.tscn" id="5_kj2tp"]
+[ext_resource type="PackedScene" uid="uid://c3hqm2kwq174u" path="res://house.tscn" id="6_hs7ad"]
+
+[node name="Buildings2" type="Node"]
+
+[node name="Castle" parent="." instance=ExtResource("1_j06wx")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 0, 0, 0)
+
+[node name="Baracks" parent="." instance=ExtResource("2_oltnf")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -38, 0, -48)
+
+[node name="Tower" parent="." instance=ExtResource("3_4t60c")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 42, 0, 10)
+visible = false
+
+[node name="Armory" parent="." instance=ExtResource("4_g32ow")]
+
+[node name="Market" parent="." instance=ExtResource("5_kj2tp")]
+
+[node name="House" parent="." instance=ExtResource("6_hs7ad")]
