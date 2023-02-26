@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Invicem Td"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/inventory-system/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg", "res://addons/multimesh_scatter/plugin.cfg")
+
 [input]
 
 w={

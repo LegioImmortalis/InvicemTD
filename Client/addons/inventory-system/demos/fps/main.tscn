@@ -1,0 +1,136 @@
+[gd_scene load_steps=11 format=3 uid="uid://bt8sqvn7xs013"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/demos/fps/basic_test.gd" id="1_1xgci"]
+[ext_resource type="Resource" uid="uid://be14ch2lo1u5n" path="res://addons/inventory-system/demos/fps/items/wood.tres" id="2_h5xaf"]
+[ext_resource type="Resource" path="res://addons/inventory-system/demos/fps/items/rock.tres" id="3_l6rt8"]
+[ext_resource type="Resource" uid="uid://b2hp3ecf6jmdp" path="res://addons/inventory-system/demos/fps/database.tres" id="4_fe8f5"]
+[ext_resource type="FontFile" uid="uid://bailm1kvljukg" path="res://addons/inventory-system/demos/ui/fonts/m5x7.ttf" id="5_cm0hh"]
+[ext_resource type="PackedScene" uid="uid://bmptjwipdws3" path="res://addons/inventory-system/demos/ui/inventory_system_ui.tscn" id="6_gphqh"]
+[ext_resource type="PackedScene" uid="uid://31k7uh2hudrj" path="res://addons/inventory-system/demos/fps/box_inventory.tscn" id="9_ia5mg"]
+[ext_resource type="Script" path="res://addons/inventory-system/demos/base/setup_keys.gd" id="10_1ncja"]
+[ext_resource type="PackedScene" uid="uid://dpipq2p2fvy7l" path="res://addons/inventory-system/demos/fps/player.tscn" id="14_kqlku"]
+[ext_resource type="PackedScene" uid="uid://ckee41fw4fqyf" path="res://addons/inventory-system/demos/fps/level.tscn" id="16_46jkf"]
+
+[node name="Demo" type="Node3D"]
+script = ExtResource("1_1xgci")
+item_wood = ExtResource("2_h5xaf")
+item_metal = ExtResource("3_l6rt8")
+database = ExtResource("4_fe8f5")
+
+[node name="UI" type="CanvasLayer" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="Labels" type="Control" parent="UI"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Labels"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 188.0
+offset_bottom = 132.0
+
+[node name="Label" type="Label" parent="UI/Labels/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "Test Keys"
+
+[node name="Label2" type="Label" parent="UI/Labels/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "I - Open Inventory"
+
+[node name="Label3" type="Label" parent="UI/Labels/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "F1 - Add wood item"
+
+[node name="Label4" type="Label" parent="UI/Labels/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "F2 - Remove 2 wood item"
+
+[node name="Label5" type="Label" parent="UI/Labels/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "F3 - Add metal item"
+
+[node name="Label6" type="Label" parent="UI/Labels/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "F3 - Remove 2 metal item"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/Labels"]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 16.0
+offset_right = 558.0
+offset_bottom = 132.0
+
+[node name="Label" type="Label" parent="UI/Labels/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "Mouse Actions in Slot"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="UI/Labels/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "Left Mouse - Get all items from slot"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="UI/Labels/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "Right Mouse - Get half items from slot"
+horizontal_alignment = 2
+
+[node name="InteractMessage" type="Label" parent="UI/Labels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -165.0
+offset_right = -224.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_cm0hh")
+text = "E - Open Loot"
+horizontal_alignment = 1
+
+[node name="Inventory System UI" parent="UI" instance=ExtResource("6_gphqh")]
+
+[node name="Player" parent="." instance=ExtResource("14_kqlku")]
+
+[node name="Level" parent="." instance=ExtResource("16_46jkf")]
+
+[node name="Box Inventory" parent="." instance=ExtResource("9_ia5mg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -4)
+
+[node name="Inventory" parent="Box Inventory" index="2"]
+inventory_name = "Static Inventory"
+
+[node name="Box Inventory2" parent="." instance=ExtResource("9_ia5mg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65824, 0.5, -4)
+
+[node name="Inventory" parent="Box Inventory2" index="2"]
+create_slot_if_needed = false
+remove_slot_if_empty = false
+inventory_name = "Dynamic Inventory"
+
+[node name="Setup Keys" type="Node" parent="."]
+script = ExtResource("10_1ncja")
+
+[editable path="Box Inventory"]
+[editable path="Box Inventory2"]

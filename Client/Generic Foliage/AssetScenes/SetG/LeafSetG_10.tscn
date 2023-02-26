@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Generic Foliage/GLTF/LeafSetTrim_2.material" type="Material" id=1]
+[ext_resource path="res://Generic Foliage/Material/LeafSet_2.tres" type="Material" id=2]
+
+[sub_resource type="ArrayMesh" id=122]
+resource_name = "LeafSet_Plane050"
+surfaces/0 = {
+"aabb": AABB( -0.114025, 2.98023e-08, 1.3027e-15, 0.238427, 0.52281, 1.00229e-05 ),
+"array_data": PoolByteArray( 241, 192, 254, 61, 52, 214, 5, 63, 190, 76, 196, 50, 0, 0, 127, 63, 34, 55, 188, 57, 241, 192, 254, 61, 0, 0, 0, 51, 46, 189, 187, 38, 0, 0, 127, 63, 34, 55, 207, 58, 49, 134, 233, 189, 52, 214, 5, 63, 190, 76, 196, 50, 0, 0, 127, 63, 39, 54, 188, 57, 49, 134, 233, 189, 0, 0, 0, 51, 46, 189, 187, 38, 0, 0, 127, 63, 39, 54, 207, 58, 0, 0, 160, 49, 52, 214, 5, 63, 190, 76, 196, 50, 0, 0, 127, 63, 159, 54, 188, 57, 0, 0, 160, 49, 0, 0, 0, 51, 46, 189, 187, 38, 0, 0, 127, 63, 159, 54, 207, 58 ),
+"array_index_data": PoolByteArray( 5, 0, 0, 0, 1, 0, 5, 0, 4, 0, 0, 0, 3, 0, 4, 0, 5, 0, 3, 0, 2, 0, 4, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 12,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 6
+}
+
+[node name="LeafSetG_10" type="MeshInstance"]
+mesh = SubResource( 122 )
+material/0 = ExtResource( 2 )

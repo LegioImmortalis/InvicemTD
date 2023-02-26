@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://vedgnf41sk25"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_jqe6v"]
+[ext_resource type="Script" path="res://map.gd" id="2_myxs4"]
+
+[node name="Client" type="Node"]
+
+[node name="Player" type="Node3D" parent="."]
+script = ExtResource("1_jqe6v")
+
+[node name="Buildings" type="Node3D" parent="Player"]
+
+[node name="Maps" type="Node3D" parent="."]
+
+[node name="1" type="StaticBody3D" parent="Maps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, -150)
+visible = false
+script = ExtResource("2_myxs4")
+
+[node name="2" type="StaticBody3D" parent="Maps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -150)
+visible = false
+script = ExtResource("2_myxs4")
+
+[node name="3" type="StaticBody3D" parent="Maps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, -150)
+visible = false
+script = ExtResource("2_myxs4")
+
+[node name="4" type="StaticBody3D" parent="Maps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, 0)
+visible = false
+script = ExtResource("2_myxs4")
+
+[node name="5" type="StaticBody3D" parent="Maps"]
+visible = false
+script = ExtResource("2_myxs4")
+
+[node name="6" type="StaticBody3D" parent="Maps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, 0)
+visible = false
+script = ExtResource("2_myxs4")
+
+[node name="7" type="StaticBody3D" parent="Maps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, 150)
+visible = false
+script = ExtResource("2_myxs4")
+
+[node name="8" type="StaticBody3D" parent="Maps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 150)
+visible = false
+script = ExtResource("2_myxs4")
+
+[node name="9" type="StaticBody3D" parent="Maps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, 150)
+visible = false
+script = ExtResource("2_myxs4")

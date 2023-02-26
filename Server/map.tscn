@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dyq6fme728g5r"]
+
+[node name="Map" type="StaticBody3D"]
+visible = false

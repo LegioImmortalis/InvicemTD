@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://otpjd1ayat0v"]
+
+[ext_resource type="Script" path="res://server.gd" id="1_kirsa"]
+
+[node name="Server" type="Node"]
+script = ExtResource("1_kirsa")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://client.tscn")
+spawn_path = NodePath("..")

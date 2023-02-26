@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://l8etippvgt1e"]
+
+[ext_resource type="ArrayMesh" uid="uid://bl6edyof23uu4" path="res://Generic Foliage/AssetScenes/SetD/LeafSetD_20.tres" id="1_7qf65"]
+
+[node name="LeafSetD_20" type="MeshInstance3D"]
+mesh = ExtResource("1_7qf65")
